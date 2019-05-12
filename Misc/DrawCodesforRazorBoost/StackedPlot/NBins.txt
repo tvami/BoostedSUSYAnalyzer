@@ -1,0 +1,3256 @@
+Key = AK8_jet1_eta_G
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_G_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_G_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_L
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_L_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_L_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_Q
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_Q_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_Q_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_S
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_S_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_S_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_T
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_T_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_T_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_W
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_W_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_W_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_Z
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_Z_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_Z_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_q
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_q_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_q_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_s
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_s_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_eta_s_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = AK8_jet1_pt_G
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_G_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_G_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_L
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_L_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_L_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_Q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_Q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_Q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_S
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_S_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_S_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_T
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_T_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_T_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_W
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_W_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_W_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_Z
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_Z_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_Z_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_s
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_s_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = AK8_jet1_pt_s_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = MET
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_0Lep_G
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_0Lep_G_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_0Lep_G_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_1Pho_G
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_1Pho_G_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_1Pho_G_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_G
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_G_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_G_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_L
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_L_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_L_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_Q
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_Q_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_Q_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_S
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_S_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_S_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_T
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_T_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_T_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_W
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_W_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_W_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_Z
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_Z_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_Z_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no0Lep_Q
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no0Lep_Q_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no0Lep_Q_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no0b_L
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no0b_L_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no0b_L_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_L
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_L_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_L_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_T
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_T_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_T_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_W
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_W_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1Lep_W_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1b_T
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1b_T_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no1b_T_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no2Lep_Z
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no2Lep_Z_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_no2Lep_Z_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_L
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_L_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_L_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_T
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_T_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_T_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_W
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_W_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMT_W_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMll_Z
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMll_Z_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_noMll_Z_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_G
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_G_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_G_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_L
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_L_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_L_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_Q
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_Q_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_Q_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_T
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_T_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_T_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_W
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_W_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_W_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_Z
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_Z_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nomDPhi_Z_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_G
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_G_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_G_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_L
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_L_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_L_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_Q
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_Q_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_Q_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_T
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_T_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_T_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_W
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_W_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_W_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_Z
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_Z_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonW_Z_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonb_Q
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonb_Q_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonb_Q_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonb_W
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonb_W_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_nonb_W_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_phi_G
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_G_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_G_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_L
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_L_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_L_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_Q
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_Q_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_Q_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_S
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_S_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_S_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_T
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_T_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_T_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_W
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_W_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_W_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_Z
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_Z_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_Z_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_q
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_q_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_q_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_s
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_s_nj35
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_phi_s_nj6
+Num.of bin = 64
+Bin Width = 0.100000
+
+Key = MET_q
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_q_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_q_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_s
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_s_nj35
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MET_s_nj6
+Num.of bin = 40
+Bin Width = 50.000000
+
+Key = MR_0Lep_G
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_0Lep_G_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_0Lep_G_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_1Pho_G
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_1Pho_G_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_1Pho_G_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_G
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_G_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_G_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_L
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_L_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_L_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_Q
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_Q_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_Q_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_S
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_S_1Lep
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_S_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_S_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_T
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_T_1Lep
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_T_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_T_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_W
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_W_1Lep
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_W_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_W_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_Z
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_Z_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_Z_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no0Lep_Q
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no0Lep_Q_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no0Lep_Q_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no0b_L
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no0b_L_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no0b_L_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_L
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_L_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_L_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_T
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_T_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_T_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_W
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_W_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1Lep_W_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1b_T
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1b_T_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no1b_T_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no2Lep_Z
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no2Lep_Z_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_no2Lep_Z_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_L
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_L_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_L_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_T
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_T_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_T_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_W
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_W_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMT_W_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMll_Z
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMll_Z_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_noMll_Z_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_G
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_G_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_G_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_L
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_L_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_L_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_Q
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_Q_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_Q_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_T
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_T_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_T_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_W
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_W_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_W_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_Z
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_Z_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nomDPhi_Z_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_G
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_G_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_G_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_L
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_L_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_L_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_Q
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_Q_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_Q_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_T
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_T_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_T_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_W
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_W_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_W_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_Z
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_Z_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonW_Z_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonb_Q
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonb_Q_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonb_Q_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonb_W
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonb_W_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_nonb_W_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_q
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_q_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_q_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_s
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_s_nj35
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MR_s_nj6
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = MT_noMT_L
+Num.of bin = 20
+Bin Width = 25.000000
+
+Key = MT_noMT_L_nj35
+Num.of bin = 20
+Bin Width = 25.000000
+
+Key = MT_noMT_L_nj6
+Num.of bin = 20
+Bin Width = 25.000000
+
+Key = MT_noMT_T
+Num.of bin = 25
+Bin Width = 20.000000
+
+Key = MT_noMT_T_nj35
+Num.of bin = 25
+Bin Width = 20.000000
+
+Key = MT_noMT_T_nj6
+Num.of bin = 25
+Bin Width = 20.000000
+
+Key = MT_noMT_W
+Num.of bin = 25
+Bin Width = 20.000000
+
+Key = MT_noMT_W_nj35
+Num.of bin = 25
+Bin Width = 20.000000
+
+Key = MT_noMT_W_nj6
+Num.of bin = 25
+Bin Width = 20.000000
+
+Key = Mll_noMll_Z
+Num.of bin = 50
+Bin Width = 2.000000
+
+Key = Mll_noMll_Z_nj35
+Num.of bin = 50
+Bin Width = 2.000000
+
+Key = Mll_noMll_Z_nj6
+Num.of bin = 50
+Bin Width = 2.000000
+
+Key = R2_0Lep_G
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_0Lep_G_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_0Lep_G_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_1Pho_G
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_1Pho_G_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_1Pho_G_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_G
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_G_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_G_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_L
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_L_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_L_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_Q
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_Q_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_Q_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_S
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_S_1Lep
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_S_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_S_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_T
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_T_1Lep
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_T_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_T_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_W
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_W_1Lep
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_W_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_W_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_Z
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_Z_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_Z_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no0Lep_Q
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no0Lep_Q_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no0Lep_Q_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no0b_L
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no0b_L_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no0b_L_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_L
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_L_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_L_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_T
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_T_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_T_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_W
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_W_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1Lep_W_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1b_T
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1b_T_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no1b_T_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no2Lep_Z
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no2Lep_Z_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_no2Lep_Z_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_L
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_L_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_L_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_T
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_T_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_T_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_W
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_W_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMT_W_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMll_Z
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMll_Z_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_noMll_Z_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_G
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_G_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_G_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_L
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_L_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_L_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_Q
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_Q_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_Q_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_T
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_T_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_T_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_W
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_W_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_W_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_Z
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_Z_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nomDPhi_Z_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_G
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_G_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_G_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_L
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_L_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_L_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_Q
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_Q_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_Q_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_T
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_T_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_T_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_W
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_W_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_W_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_Z
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_Z_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonW_Z_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonb_Q
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonb_Q_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonb_Q_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonb_W
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonb_W_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_nonb_W_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_q
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_q_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_q_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_s
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_s_nj35
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = R2_s_nj6
+Num.of bin = 7
+Bin Width = 0.040000
+
+Key = ele_pt_L
+Num.of bin = 2
+Bin Width = 200.000000
+
+Key = ele_pt_T
+Num.of bin = 2
+Bin Width = 200.000000
+
+Key = ele_pt_W
+Num.of bin = 2
+Bin Width = 200.000000
+
+Key = h_AK8JetMass_TriggerEff_0
+Num.of bin = 6
+Bin Width = 40.000000
+
+Key = h_AK8JetMass_TriggerEff_1
+Num.of bin = 6
+Bin Width = 40.000000
+
+Key = h_AK8JetpT_TriggerEff_0
+Num.of bin = 7
+Bin Width = 200.000000
+
+Key = h_AK8JetpT_TriggerEff_1
+Num.of bin = 7
+Bin Width = 200.000000
+
+Key = h_MET_TriggerEff_0
+Num.of bin = 7
+Bin Width = 100.000000
+
+Key = h_MET_TriggerEff_1
+Num.of bin = 7
+Bin Width = 100.000000
+
+Key = h_MR_TriggerEff_0
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = h_MR_TriggerEff_1
+Num.of bin = 7
+Bin Width = 600.000000
+
+Key = h_R2_TriggerEff_0
+Num.of bin = 20
+Bin Width = 0.100000
+
+Key = h_R2_TriggerEff_1
+Num.of bin = 20
+Bin Width = 0.100000
+
+Key = ht_AK4
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_0Lep_G
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_0Lep_G_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_0Lep_G_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_1Pho_G
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_1Pho_G_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_1Pho_G_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_G
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_G_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_G_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_L
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_L_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_L_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_Q
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_Q_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_Q_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_S
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_S_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_S_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_T
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_T_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_T_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_W
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_W_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_W_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_Z
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_Z_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_Z_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no0Lep_Q
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no0Lep_Q_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no0Lep_Q_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no0b_L
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no0b_L_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no0b_L_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_L
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_L_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_L_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_T
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_T_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_T_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_W
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_W_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1Lep_W_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1b_T
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1b_T_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no1b_T_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no2Lep_Z
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no2Lep_Z_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_no2Lep_Z_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_L
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_L_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_L_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_T
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_T_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_T_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_W
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_W_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMT_W_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMll_Z
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMll_Z_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_noMll_Z_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_G
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_G_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_G_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_L
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_L_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_L_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_Q
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_Q_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_Q_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_T
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_T_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_T_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_W
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_W_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_W_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_Z
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_Z_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nomDPhi_Z_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_G
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_G_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_G_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_L
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_L_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_L_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_Q
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_Q_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_Q_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_T
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_T_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_T_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_W
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_W_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_W_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_Z
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_Z_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonW_Z_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonb_Q
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonb_Q_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonb_Q_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonb_W
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonb_W_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_nonb_W_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_q
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_q_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_q_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_s
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_s_nj35
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = ht_AK4_s_nj6
+Num.of bin = 11
+Bin Width = 100.000000
+
+Key = jet1_pt
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_0Lep_G
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_0Lep_G_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_0Lep_G_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_1Pho_G
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_1Pho_G_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_1Pho_G_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_G
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_G_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_G_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_L
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_L_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_L_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_Q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_Q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_Q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_S
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_S_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_S_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_T
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_T_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_T_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_W
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_W_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_W_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_Z
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_Z_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_Z_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no0Lep_Q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no0Lep_Q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no0Lep_Q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no0b_L
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no0b_L_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no0b_L_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_L
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_L_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_L_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_T
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_T_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_T_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_W
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_W_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1Lep_W_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1b_T
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1b_T_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no1b_T_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no2Lep_Z
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no2Lep_Z_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_no2Lep_Z_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_L
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_L_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_L_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_T
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_T_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_T_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_W
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_W_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMT_W_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMll_Z
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMll_Z_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_noMll_Z_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_G
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_G_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_G_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_L
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_L_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_L_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_Q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_Q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_Q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_T
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_T_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_T_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_W
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_W_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_W_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_Z
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_Z_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nomDPhi_Z_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_G
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_G_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_G_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_L
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_L_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_L_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_Q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_Q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_Q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_T
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_T_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_T_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_W
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_W_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_W_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_Z
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_Z_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonW_Z_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonb_Q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonb_Q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonb_Q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonb_W
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonb_W_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_nonb_W_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_q
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_q_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_q_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_s
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_s_nj35
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = jet1_pt_s_nj6
+Num.of bin = 20
+Bin Width = 100.000000
+
+Key = mDPhi_nomDPhi_G
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_G_nj35
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_G_nj6
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_L
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_L_nj35
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_L_nj6
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_Q
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_Q_nj35
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_Q_nj6
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_T
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_T_nj35
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_T_nj6
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_W
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_W_nj35
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_W_nj6_nj6
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_Z
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_Z_nj35
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_Z_nj6
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_s
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_s_nj35
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mDPhi_nomDPhi_s_nj6
+Num.of bin = 64
+Bin Width = 0.050000
+
+Key = mu_pt_L
+Num.of bin = 2
+Bin Width = 200.000000
+
+Key = mu_pt_T
+Num.of bin = 2
+Bin Width = 200.000000
+
+Key = mu_pt_W
+Num.of bin = 2
+Bin Width = 200.000000
+
+Key = nAK8jet
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nEleLoose
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nEleMedium
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nEleTight
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nEleVeto
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nIsoTrack
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nLep_0Lep_G
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_0Lep_G_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_0Lep_G_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no0Lep_Q
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no0Lep_Q_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no0Lep_Q_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_L
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_L_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_L_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_T
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_T_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_T_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_W
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_W_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no1Lep_W_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no2Lep_Z
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no2Lep_Z_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nLep_no2Lep_Z_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nMuMedium
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nMuSoft
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nMuTight
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nPhoMedium
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nPho_1Pho_G
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nPho_1Pho_G_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nPho_1Pho_G_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nTauVeto
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nW_nonW_G
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_G_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_G_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_L
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_L_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_L_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_Q
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_Q_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_Q_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_T
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_T_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_T_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_W
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_W_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_W_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_Z
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_Z_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_Z_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_q
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_q_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_q_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_s
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_s_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nW_nonW_s_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nbLoose
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nbMedium
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nbTight
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = nb_no0b_L
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_no0b_L_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_no0b_L_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_no1b_T
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_no1b_T_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_no1b_T_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_Q
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_Q_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_Q_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_W
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_W_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_W_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_q
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_q_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_q_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_s
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_s_nj35
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nb_nonb_s_nj6
+Num.of bin = 10
+Bin Width = 1.000000
+
+Key = nisrjets
+Num.of bin = 16
+Bin Width = 1.000000
+
+Key = njet
+Num.of bin = 20
+Bin Width = 1.000000
+
+Key = npvLowHigh_data
+Num.of bin = 2
+Bin Width = 20.000000
+
+Key = softDropMass
+Num.of bin = 100
+Bin Width = 5.000000
+
+Key = tau21_G
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_G_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_G_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_L
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_L_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_L_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_Q
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_Q_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_Q_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_S
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_S_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_S_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_T
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_T_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_T_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_W
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_W_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_W_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_Z
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_Z_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_Z_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_q
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_q_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_q_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_s
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_s_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau21_s_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_G
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_G_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_G_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_L
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_L_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_L_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_Q
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_Q_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_Q_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_S
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_S_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_S_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_T
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_T_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_T_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_W
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_W_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_W_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_Z
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_Z_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_Z_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_q
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_q_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_q_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_s
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_s_nj35
+Num.of bin = 20
+Bin Width = 0.050000
+
+Key = tau32_s_nj6
+Num.of bin = 20
+Bin Width = 0.050000
+
