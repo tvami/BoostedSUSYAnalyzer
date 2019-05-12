@@ -1,4 +1,4 @@
-# BoostAnalyzer17
+# BoostAnalyzer
 
 The event structure can be seen in include/eventBuffer.h
 
@@ -8,7 +8,7 @@ source setup.sh
 make clean
 make
 
-If you use 2016 implemenation code, you have to fix the Analysis_*.h, This is the same mehtoud as the 2016's.
+If you use 2016 implemenation code, you have to fix the Analysis_*.h, This is the same mehtod as the 2016's.
 
 ./Analyzer filelists/backgrounds/filelist_DY.txt DY.root
 
