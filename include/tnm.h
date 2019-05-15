@@ -27,7 +27,11 @@
 #ifdef PROJECT_NAME
 #include "PhysicsTools/TheNtupleMaker/interface/eventBuffer.h"
 #else
-#include "eventBuffer.h"
+    #if JEC == 0
+        #include "include/eventBuffer.h"
+    #else 
+        #include "include/eventBuffer_JEC.h"
+    #endif
 #endif
 //-----------------------------------------------------------------------------
 

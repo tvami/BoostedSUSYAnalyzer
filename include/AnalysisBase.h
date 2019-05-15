@@ -324,16 +324,16 @@ AnalysisBase::define_preselections(const eventBuffer& data)
 #define W_SD_MASS_CUT_LOW   65
 #define W_SD_MASS_CUT_HIGH  105
 #define W_TAU21_LOOSE_CUT   0.55
-#define W_TAU21_TIGHT_CUT   0.4 // There is a Tighter WP: 0.35
+#define W_TAU21_TIGHT_CUT   0.45 // There is a Tighter WP: 0.35
 
-#define W_TAG_HP_SF       1.00
+#define W_TAG_HP_SF       0.97
 #define W_TAG_HP_SF_ERR   0.06
-#define W_TAG_LP_SF       0.96
-#define W_TAG_LP_SF_ERR   0.11
-#define W_TAG_JMS_SF      1.00
-#define W_TAG_JMS_SF_ERR  0.0094
-#define W_TAG_JMR_SF      1.00
-#define W_TAG_JMR_SF_ERR  0.20
+#define W_TAG_LP_SF       1.14
+#define W_TAG_LP_SF_ERR   0.29
+#define W_TAG_JMS_SF      0.982
+#define W_TAG_JMS_SF_ERR  0.004
+#define W_TAG_JMR_SF      1.09
+#define W_TAG_JMR_SF_ERR  0.05
 #define W_TAG_SIGMA_MC    10.1
 
 /*
@@ -1262,10 +1262,10 @@ AnalysisBase::calculate_common_variables(eventBuffer& data, const unsigned int& 
       float ipsig = std::abs(data.Electron[i].sip3d);
 
       bool id_veto_noiso   = (data.Electron[i].cutBased >= 1.0);
-      bool id_loose_noiso = (data.Electron[i].mvaFall17noIso_WPL == 1.0);
-      bool id_select_noiso = (data.Electron[i].mvaFall17noIso_WP90 == 1.0); //medium
-      bool id_tight  = (data.Electron[i].mvaFall17Iso_WP80 == 1.0); //tight
-      bool id_test  = (data.Electron[i].mvaFall17noIso_WP80 == 1.0);
+      bool id_loose_noiso = (data.Electron[i].mvaFall17V2noIso_WPL == 1.0);
+      bool id_select_noiso = (data.Electron[i].mvaFall17V2noIso_WP90 == 1.0); //medium
+      bool id_tight  = (data.Electron[i].mvaFall17V2Iso_WP80 == 1.0); //tight
+      bool id_test  = (data.Electron[i].mvaFall17V2noIso_WP80 == 1.0);
 
 #if USE_POG_ID > 0
       if ((passEleVeto[i] =
@@ -1496,7 +1496,7 @@ AnalysisBase::calculate_common_variables(eventBuffer& data, const unsigned int& 
     passTauVeto   .assign(data.Tau.size(),  0);
     nTauVeto = 0;
     for (size_t i=0; i<data.Tau.size(); ++i) {
-      bool id_veto = (data.Tau[i].idMVAnewDM2017v2 == 4);
+      bool id_veto = (data.Tau[i].idMVAnewDM2017v2 >= 4);
       // Veto
       if((passTauVeto[i] =
 	  ( id_veto //&&
@@ -1859,7 +1859,7 @@ AnalysisBase::calculate_common_variables(eventBuffer& data, const unsigned int& 
 
     // Online jet selection for HT (+ testing Additional Loose Jet ID)
     if ( //data.Jet[i].looseJetpdgId == 1 &&
-	data.Jet[i].pt         >  30 &&
+	data.Jet[i].pt         >  JET_AK4_PT_CUT &&
 	std::abs(data.Jet[i].eta)  <  3.0 ) {
       AK4_HtOnline += data.Jet[i].pt;
 
@@ -2200,7 +2200,7 @@ AnalysisBase::calculate_common_variables(eventBuffer& data, const unsigned int& 
     } // End Jet Selection
 
     // Online jet selection for AK8 HT
-    if ( data.FatJet[i].pt         > 10 &&
+    if ( data.FatJet[i].pt         > 150 &&
 	 std::abs(data.FatJet[i].eta)  <  2.5 ) {
       // Ht
       AK8_Ht += data.FatJet[i].pt;
@@ -3291,7 +3291,7 @@ AnalysisBase::fill_common_histos(eventBuffer& d, const bool& varySystematics, co
     nJet = nJetAK8 = 0;
     for(size_t i=0; i<d.Jet.size(); ++i) {
       // Jet ID
-      if ( d.Jet[i].jetId == 2 &&
+      if ( d.Jet[i].jetId >= 2 &&
 	   d.Jet[i].pt         >= JET_AK4_PT_CUT &&
 	   std::abs(d.Jet[i].eta)  <  JET_AK4_ETA_CUT ) {
 	nJet++;
@@ -3712,8 +3712,10 @@ AnalysisBase::get_alphas_weight(const std::vector<float>& alphas_Weights, const 
   // Recommendation is to use +- 0.0015 --> rescale difference by 0.75 or 1.5
   // Treat weight as usual, gaussian, rescale to desired nSigma
   double w_alphas = 1;
-  double w_alphas_up   = alphas_Weights[1];
-  double w_alphas_down = alphas_Weights[0];
+//   double w_alphas_up   = alphas_Weights[1];
+//   double w_alphas_down = alphas_Weights[0];
+  double w_alphas_up   = 0;
+  double w_alphas_down = 0;
   double nSigma_0_0015 = nSigmaAlphaS;
   if (LHA_PDF_ID==260000||LHA_PDF_ID==260400) {
     // Powheg samples have -+ 0.001
@@ -4302,7 +4304,7 @@ double AnalysisBase::calc_fake_top_0b_mass_tagging_sf(eventBuffer& data, const d
       for(size_t j=0; j<data.Jet.size(); ++j) {
         TLorentzVector AK4_v4; AK4_v4.SetPtEtaPhiM(data.Jet[j].pt, data.Jet[j].eta, data.Jet[j].phi, data.Jet[j].mass);
         if( (data.Jet[i].jetId == 2 || data.Jet[i].jetId == 6 )&&
-          data.Jet[i].pt         >= 30 &&
+          data.Jet[i].pt         >= JET_AK4_PT_CUT &&
           data.Jet[i].btagDeepB >= 0.4941 &&
           std::abs(data.Jet[i].eta)  <  2.4 ) {
           double dR = AK4_v4.DeltaR(AK8_v4);
@@ -4340,7 +4342,7 @@ double AnalysisBase::calc_fake_top_mass_tagging_sf(eventBuffer& data, const doub
       for(size_t j=0; j<data.Jet.size(); ++j) {
         TLorentzVector AK4_v4; AK4_v4.SetPtEtaPhiM(data.Jet[j].pt, data.Jet[j].eta, data.Jet[j].phi, data.Jet[j].mass);
         if( (data.Jet[i].jetId == 2 || data.Jet[i].jetId == 6 )&&
-          data.Jet[i].pt         >= 30 &&
+          data.Jet[i].pt         >= JET_AK4_PT_CUT &&
           data.Jet[i].btagDeepB >= 0.4941 &&
           std::abs(data.Jet[i].eta)  <  2.4 ) {
           double dR = AK4_v4.DeltaR(AK8_v4);
@@ -4400,7 +4402,7 @@ double AnalysisBase::calc_w_tagging_sf(eventBuffer& data, const double& nSigmaWT
        std::abs(data.FatJet[i].eta)  <  2.4 &&
 	    data.FatJet[i].msoftdrop >= 65 &&
 	    data.FatJet[i].msoftdrop <  105 &&
-	    data.FatJet[i].tau2/data.FatJet[i].tau1 < 0.4) {
+	    data.FatJet[i].tau2/data.FatJet[i].tau1 < W_TAU21_TIGHT_CUT) {
       TLorentzVector wtag_v4; wtag_v4.SetPtEtaPhiM(data.FatJet[i].pt, data.FatJet[i].eta, data.FatJet[i].phi, data.FatJet[i].mass);
       double dR = 9999;
       for(size_t j=0; j<data.GenPart.size(); ++j) {
@@ -4455,7 +4457,7 @@ double AnalysisBase::calc_w_tagging_sf(eventBuffer& data, const double& nSigmaWT
        std::abs(data.FatJet[i].eta)  <  2.4 &&
 	    data.FatJet[i].msoftdrop >= 65 &&
 	    data.FatJet[i].msoftdrop <  105 &&
-	    data.FatJet[i].tau2/data.FatJet[i].tau1 >= 0.4) {
+	    data.FatJet[i].tau2/data.FatJet[i].tau1 >=  W_TAU21_TIGHT_CUT) {
       TLorentzVector wtag_v4; wtag_v4.SetPtEtaPhiM(data.FatJet[i].pt, data.FatJet[i].eta, data.FatJet[i].phi, data.FatJet[i].mass);
       double dR = 9999;
       for(size_t j=0; j<data.GenPart.size(); ++j) {
@@ -4480,7 +4482,7 @@ double AnalysisBase::calc_fake_w_mass_tagging_sf(eventBuffer& data, const double
        std::abs(data.FatJet[i].eta)  <  2.4 &&
 	    data.FatJet[i].msoftdrop >= 65 &&
 	    data.FatJet[i].msoftdrop <  105 &&
-	    data.FatJet[i].tau2/data.FatJet[i].tau1 < 0.4) {
+	    data.FatJet[i].tau2/data.FatJet[i].tau1 <  W_TAU21_TIGHT_CUT) {
       for(size_t j=0; j<data.GenPart.size(); ++j) {
         if ( abs(data.GenPart[j].pdgId)==24 ) GenW = true;
       }
@@ -4618,8 +4620,8 @@ std::tuple<double, double, double> AnalysisBase::calc_ele_sf(eventBuffer& data, 
 #if USE_POG_ID > 0
     bool id_veto_noiso   = (data.Electron[i].cutBased >= 1.0);
 #endif
-    bool id_loose_noiso  = (data.Electron[i].mvaFall17noIso_WPL == 1.0);
-    bool id_select_noiso = (data.Electron[i].mvaFall17noIso_WP90 == 1.0);
+    bool id_loose_noiso  = (data.Electron[i].mvaFall17V2noIso_WPL == 1.0);
+    bool id_select_noiso = (data.Electron[i].mvaFall17V2noIso_WP90 == 1.0);
     // Apply reconstruction scale factor - Warning! strange binning (pt vs eta)
     geteff2D(eff_full_ele_reco, eta, pt, reco_sf, reco_sf_err);
     // If pt is below 20 or above 80 GeV increase error by 1%

@@ -8,7 +8,11 @@
 #define TOP     0
 #define SKIM    0	
 
-#include "include/eventBuffer.h"
+#if JEC == 0
+    #include "include/eventBuffer.h"
+#else 
+    #include "include/eventBuffer_JEC.h"
+#endif
 #include "include/treestream.h"
 
 #include "Analysis_Tamas.h" // Specify here the implementations for your Analysis

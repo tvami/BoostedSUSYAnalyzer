@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <vector>
 
+#define JEC 	1
 #include "tnm.h"
 #include "settings_Tamas.h" // Define all Analysis specific settings here
 
