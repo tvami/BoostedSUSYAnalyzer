@@ -1,14 +1,14 @@
-# BoostAnalyzer17
+# BoostAnalyzer18
 
-The event structure can be seen in include/eventBuffer.h
+The event structure can be seen in include/eventBuffer.h with JEC corrected in include/eventBuffer_JEC.h
 
-As usual do
+As usually, do
 
 source setup.sh
 make clean
 make
 
-If you use 2016 implemenation code, you have to fix the Analysis_*.h, This is the same mehtoud as the 2016's.
+You have to modify the Analysis_*.h for changing the analysis cuts
 
 ./Analyzer filelists/backgrounds/filelist_DY.txt DY.root
 
