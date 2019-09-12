@@ -255,6 +255,7 @@ AnalysisBase::define_preselections(const eventBuffer& data)
   baseline_cuts.push_back({ .name="Clean_Ecal_Dead_Cell_TP", .func = [&data] { return data.Flag_EcalDeadCellTriggerPrimitiveFilter; } });
   baseline_cuts.push_back({ .name="Clean_EE_Bad_Sc",         .func = [&data,this] { return isData ? data.Flag_eeBadScFilter : 1; } });
 //   baseline_cuts.push_back({ .name="Clean_Bad_Charged",       .func = [&data] { return data.Flag_BadChargedCandidateFilter; } });
+  baseline_cuts.push_back({ .name="Clean_Bad_Muon",          .func = [&data] { return data.Flag_BadPFMuonFilter; } });
 }
 
 
@@ -320,16 +321,16 @@ AnalysisBase::define_preselections(const eventBuffer& data)
 #define W_SD_MASS_CUT_LOW   65
 #define W_SD_MASS_CUT_HIGH  105
 #define W_TAU21_LOOSE_CUT   0.55
-#define W_TAU21_TIGHT_CUT   0.4 // There is a Tighter WP: 0.35
+#define W_TAU21_TIGHT_CUT   0.45 // There is a Tighter WP: 0.35
 
-#define W_TAG_HP_SF       1.00
+#define W_TAG_HP_SF       0.97
 #define W_TAG_HP_SF_ERR   0.06
-#define W_TAG_LP_SF       0.96
-#define W_TAG_LP_SF_ERR   0.11
-#define W_TAG_JMS_SF      1.00
-#define W_TAG_JMS_SF_ERR  0.0094
-#define W_TAG_JMR_SF      1.00
-#define W_TAG_JMR_SF_ERR  0.20
+#define W_TAG_LP_SF       1.14
+#define W_TAG_LP_SF_ERR   0.29
+#define W_TAG_JMS_SF      0.982
+#define W_TAG_JMS_SF_ERR  0.009
+#define W_TAG_JMR_SF      1.09
+#define W_TAG_JMR_SF_ERR  0.10
 #define W_TAG_SIGMA_MC    10.1
 
 /*
