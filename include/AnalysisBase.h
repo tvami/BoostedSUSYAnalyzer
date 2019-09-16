@@ -112,7 +112,7 @@ public:
 
   double get_syst_weight(const double&, const double&, const double&);
 
-  void job_monitoring(const int&, const int&, const std::string&, const float);
+  void job_monitoring(const int&, const int&, const int&, const std::string&, const float);
 
   void init_syst_input();
 
@@ -1223,10 +1223,10 @@ AnalysisBase::calculate_common_variables(eventBuffer& data, const unsigned int& 
       float ipsig = std::abs(data.Electron[i].sip3d);
 
       bool id_veto_noiso   = (data.Electron[i].cutBased >= 1.0);
-      bool id_loose_noiso = (data.Electron[i].mvaFall17noIso_WPL == 1.0);
-      bool id_select_noiso = (data.Electron[i].mvaFall17noIso_WP90 == 1.0); //medium
-      bool id_tight  = (data.Electron[i].mvaFall17Iso_WP80 == 1.0); //tight
-      bool id_test  = (data.Electron[i].mvaFall17noIso_WP80 == 1.0);
+      bool id_loose_noiso = (data.Electron[i].mvaFall17V2noIso_WPL == 1.0);
+      bool id_select_noiso = (data.Electron[i].mvaFall17V2noIso_WP90 == 1.0); //medium
+      bool id_tight  = (data.Electron[i].mvaFall17V2Iso_WP80 == 1.0); //tight
+      bool id_test  = (data.Electron[i].mvaFall17V2noIso_WP80 == 1.0);
 
       if ((passEleVeto[i] =
 	  ( id_veto_noiso &&
@@ -2105,7 +2105,8 @@ AnalysisBase::calculate_common_variables(eventBuffer& data, const unsigned int& 
 	if ((passHadTop1BMassTag[i] = passSubjetBTag[i])) {
 	  itHadTop1BMassTag[i] = nHadTop1BMassTag++;
 	  iHadTop1BMassTag.push_back(i);
-	  if ((passHadTopTag[i] = (tau_32 < TOP_TAU32_CUT))) {
+	  //if ((passHadTopTag[i] = (tau_32 < TOP_TAU32_CUT))) {
+          if ((passHadTopTag[i] = (data.FatJet[i].deepTagMD_WvsQCD > 0.578))) {
 	    itHadTopTag[i] = nHadTopTag++;
 	    iHadTopTag.push_back(i);
 	  }
@@ -3364,33 +3365,26 @@ AnalysisBase::get_totweight_from_ntuple(const std::vector<std::string>& filename
 //       Calculate weight normalization for signal
 void
 AnalysisBase::calc_weightnorm_histo_from_ntuple(const std::vector<std::string>& filenames, const double& intLumi, const std::vector<std::string>& vname_signal,
-						const bool& runOnSkim, const bool& varySystematics, TDirectory* dir, bool verbose=1)
+                                                const bool& runOnSkim, const bool& varySystematics, TDirectory* dir, bool verbose=0)
 {
   // Find the index of the current signal
-  int signal_index = TString(filenames[0]).Contains("T2tt"); // 0: Mlsp vs Mgluino - T1tttt, T1ttbb, T5ttcc, T5tttt; 1: Mlsp vs Mstop - T2tt
+  int signal_index=-1; //= TString(filenames[0]).Contains("T2tt"); // 0: Mlsp vs Mgluino - T1tttt, T1ttbb, T5ttcc, T5tttt; 1: Mlsp vs Mstop - T2tt
+  std::string weightname;
+  if     (TString(filenames[0]).Contains("T2tt"))   { signal_index = 1; weightname = "data/SMS-T2tt_TuneCP2_13TeV-madgraphMLM-pythia8_RunIIFall17NanoAODv4.root"; }
+  else if(TString(filenames[0]).Contains("T1tttt")) { signal_index = 0; weightname = "data/SMS-T1tttt_TuneCP2_13TeV-madgraphMLM-pythia8_RunIIFall17NanoAODv4.root"; }
+  else if(TString(filenames[0]).Contains("T5ttcc")) { signal_index = 0; weightname = "data/SMS-T5ttcc_TuneCP2_13TeV-madgraphMLM-pythia8_RunIIFall17NanoAODv4.root"; }
 
   // Merge totweight histos
   std::map<int, double> xsec_mother;
-  for (const auto& filename : filenames) {
-    TFile* f = TFile::Open(filename.c_str());
-    // Get total weight
-    if (signal_index==0) {
-      vh_totweight_signal[signal_index]->Add((TH2D*)f->Get(runOnSkim ? "totweight_T1tttt" : "EventCounter/h_totweight_T1tttt"));
-    } else {
-      vh_totweight_signal[signal_index]->Add((TH2D*)f->Get(runOnSkim ? "totweight_T2tt" :   "EventCounter/h_totweight_T2tt"));
-    }
-#if VER > 2
-    // Get also total ISR jet weight
-    if (runOnSkim) {
-      if (signal_index==0) {
-	vh_totweight_signal_isr[signal_index]->Add((TH3D*)f->Get("totweight_isr_T1tttt"));
-      } else {
-	vh_totweight_signal_isr[signal_index]->Add((TH3D*)f->Get("totweight_isr_T2tt"));
-      }
-    }
-#endif
-    f->Close();
+  //TFile* f = TFile::Open(filenames[0].c_str());
+  TFile* f = TFile::Open(weightname.c_str());
+  // Get total weight
+  if (signal_index==0) {
+    vh_totweight_signal[signal_index]->Add((TH2D*)f->Get("totweight_T1tttt"));
+  } else {
+    vh_totweight_signal[signal_index]->Add((TH2D*)f->Get("totweight_T2tt"));
   }
+  f->Close();
 
   // Set xsec for each gluino/stop mass bin
   // Read gluino/stop xsec from same file used in TTree step
@@ -3405,24 +3399,22 @@ AnalysisBase::calc_weightnorm_histo_from_ntuple(const std::vector<std::string>& 
   // Divide(h1,h2,c1,c2) --> c1*h1/(c2*h2)
   vh_weightnorm_signal[signal_index]->Divide(vh_xsec_signal[signal_index], vh_totweight_signal[signal_index], intLumi);
   std::map<uint32_t, std::string> signal_bins;
-  if (verbose) {
-    std::cout<<"- Signal:"<<std::endl;
-    for (int binx=1, nbinx=vh_xsec_signal[signal_index]->GetNbinsX(); binx<=nbinx; ++binx)
-      for (int biny=1, nbiny=vh_xsec_signal[signal_index]->GetNbinsY(); biny<=nbiny; ++biny) {
-        double mMother = vh_xsec_signal[signal_index]->GetXaxis()->GetBinCenter(binx);
-        double mLSP = vh_xsec_signal[signal_index]->GetYaxis()->GetBinCenter(biny);
-        double xsec  = vh_xsec_signal[signal_index]      ->GetBinContent(binx, biny);
-        double totw  = vh_totweight_signal[signal_index] ->GetBinContent(binx, biny);
-        double wnorm = vh_weightnorm_signal[signal_index]->GetBinContent(binx, biny);
-        if (totw>0) {
-	  std::cout<<(signal_index?"  Bin: M(s~)=":"  Bin: M(g~)=")<<mMother<<" M(LSP)="<<mLSP<<":   xsec="<<xsec<<" totweight="<<totw<<" weightnorm="<<wnorm<<std::endl;
-	  uint32_t bin = mMother * 10000 + mLSP;
-	  std::stringstream ss;
-	  ss<<"_"<<mMother<<"_"<<mLSP;
-	  signal_bins[bin] = ss.str();
-	}
+  if (verbose) std::cout<<"- Signal:"<<std::endl;
+  for (int binx=1, nbinx=vh_xsec_signal[signal_index]->GetNbinsX(); binx<=nbinx; ++binx) {
+    for (int biny=1, nbiny=vh_xsec_signal[signal_index]->GetNbinsY(); biny<=nbiny; ++biny) {
+      double mMother = vh_xsec_signal[signal_index]->GetXaxis()->GetBinCenter(binx);
+      double mLSP = vh_xsec_signal[signal_index]->GetYaxis()->GetBinCenter(biny);
+      double xsec  = vh_xsec_signal[signal_index]      ->GetBinContent(binx, biny);
+      double totw  = vh_totweight_signal[signal_index] ->GetBinContent(binx, biny);
+      double wnorm = vh_weightnorm_signal[signal_index]->GetBinContent(binx, biny);
+      if (totw>0) {
+        if (verbose) std::cout<<(signal_index?"  Bin: M(s~)=":"  Bin: M(g~)=")<<mMother<<" M(LSP)="<<mLSP<<":   xsec="<<xsec<<" totweight="<<totw<<" weightnorm="<<wnorm<<std::endl;
+        uint32_t bin = mMother * 10000 + mLSP;
+        std::stringstream ss;
+        ss<<"_"<<mMother<<"_"<<mLSP;
+        signal_bins[bin] = ss.str();
       }
-    std::cout<<std::endl;
+    }
   }
 
   if (varySystematics&&isSignal) {
@@ -3436,20 +3428,21 @@ AnalysisBase::calc_weightnorm_histo_from_ntuple(const std::vector<std::string>& 
       m_vh_MRR2_sig_nj45[bin.first].push_back(new TH1D((std::string("MRR2_S_signal")+bin.second+"_nj45").c_str(), ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
       m_vh_MRR2_sig_nj6 [bin.first].push_back(new TH1D((std::string("MRR2_S_signal")+bin.second+"_nj6").c_str(),  ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
       for (size_t j=0; j<syst.size(); ++j) {
-	std::stringstream ss, ss45, ss6;
-	ss  <<"MRR2_S_signal"<<bin.second<<"_"<<syst[j];
-	ss45<<"MRR2_S_signal"<<bin.second<<"_nj45_"<<syst[j];
-	ss6 <<"MRR2_S_signal"<<bin.second<<"_nj6_"<<syst[j];
-	m_vh_MRR2_sig     [bin.first].push_back(new TH1D((ss.str()+"Up").c_str(),     ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
-	m_vh_MRR2_sig     [bin.first].push_back(new TH1D((ss.str()+"Down").c_str(),   ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
-	m_vh_MRR2_sig_nj45[bin.first].push_back(new TH1D((ss45.str()+"Up").c_str(),   ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
-	m_vh_MRR2_sig_nj45[bin.first].push_back(new TH1D((ss45.str()+"Down").c_str(), ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
-	m_vh_MRR2_sig_nj6 [bin.first].push_back(new TH1D((ss6.str()+"Up").c_str(),    ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
-	m_vh_MRR2_sig_nj6 [bin.first].push_back(new TH1D((ss6.str()+"Down").c_str(),  ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
+        std::stringstream ss, ss45, ss6;
+        ss  <<"MRR2_S_signal"<<bin.second<<"_"<<syst[j];
+        ss45<<"MRR2_S_signal"<<bin.second<<"_nj45_"<<syst[j];
+        ss6 <<"MRR2_S_signal"<<bin.second<<"_nj6_"<<syst[j];
+        m_vh_MRR2_sig     [bin.first].push_back(new TH1D((ss.str()+"Up").c_str(),     ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
+        m_vh_MRR2_sig     [bin.first].push_back(new TH1D((ss.str()+"Down").c_str(),   ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
+        m_vh_MRR2_sig_nj45[bin.first].push_back(new TH1D((ss45.str()+"Up").c_str(),   ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
+        m_vh_MRR2_sig_nj45[bin.first].push_back(new TH1D((ss45.str()+"Down").c_str(), ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
+        m_vh_MRR2_sig_nj6 [bin.first].push_back(new TH1D((ss6.str()+"Up").c_str(),    ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
+        m_vh_MRR2_sig_nj6 [bin.first].push_back(new TH1D((ss6.str()+"Down").c_str(),  ";MR/R^{2} bins (unrolled);Counts", 25,0,25));
       }
     }
   }
 }
+
 
 
 //_______________________________________________________
@@ -3530,8 +3523,8 @@ AnalysisBase::get_signal_mass(eventBuffer& data,const std::vector<std::string>& 
     else             {if(std::abs(data.GenPart[i].pdgId) == 1000021) mass1.push_back(data.GenPart[i].mass);}
     if(std::abs(data.GenPart[i].pdgId) == 1000022) mass2.push_back(data.GenPart[i].mass);
   }
-  m_gors = std::floor(mass1.at(0)/5)*5;
-  m_lsp  = std::floor(mass2.at(0)/25)*25;
+  m_gors = std::round(mass1.at(0)/5)*5;
+  m_lsp  = std::round(mass2.at(0)/25)*25;
   return std::make_pair(m_gors, m_lsp); 
 }
 
@@ -3700,8 +3693,10 @@ AnalysisBase::get_alphas_weight(const std::vector<float>& alphas_Weights, const 
   // Recommendation is to use +- 0.0015 --> rescale difference by 0.75 or 1.5
   // Treat weight as usual, gaussian, rescale to desired nSigma
   double w_alphas = 1;
-  double w_alphas_up   = alphas_Weights[1];
-  double w_alphas_down = alphas_Weights[0];
+//   double w_alphas_up   = alphas_Weights[1];
+//   double w_alphas_down = alphas_Weights[0];
+  double w_alphas_up   = 0;
+  double w_alphas_down = 0;
   double nSigma_0_0015 = nSigmaAlphaS;
   if (LHA_PDF_ID==260000||LHA_PDF_ID==260400) {
     // Powheg samples have -+ 0.001
@@ -3783,16 +3778,18 @@ AnalysisBase::get_scale_weight(const std::vector<float>& scale_Weights, const st
 //                Benchmarking (batch) jobs
 
 void
-AnalysisBase::job_monitoring(const int& entry, const int& nevents, const std::string& curr_file, const float threshold=5)
+AnalysisBase::job_monitoring(const int& entry, const int& ifirst, const int& ilast, const std::string& curr_file, const float threshold=5)
 {
-  if (entry==0) {
+  int curr_entry = entry - ifirst;
+  if (curr_entry==0) {
     sw_1k_ ->Start(kFALSE);
     sw_10k_->Start(kFALSE);
     sw_job_->Start(kFALSE);
+    std::cout<<"UnixTime-FirstEvent: "<<std::time(0)<<std::endl;
   } else {
     double time_1 = sw_1_->RealTime();
     sw_1_->Reset(); sw_1_->Start(kFALSE);
-    if (time_1>threshold&&entry!=1) {
+    if (time_1>threshold&&curr_entry!=1) {
       ++bad_files[curr_file];
       //std::cout<<"Bad read - time threshold: "<<threshold<<"s, unresponsive time: "<<time_1<<" s, entry: "<<entry<<" occurence: "<<bad_files[curr_file]<<std::endl;
       //if(bad_files[curr_file]==5) {
@@ -3803,31 +3800,36 @@ AnalysisBase::job_monitoring(const int& entry, const int& nevents, const std::st
       //  }
       //}
     }
-    if (entry%1000==0) {
+    if (curr_entry%1000==0) {
       double meas_1k = 1000/sw_1k_->RealTime();
       h_read_speed_1k->Fill(meas_1k);
       sw_1k_->Reset();
       sw_1k_->Start(kFALSE);
       //std::cout<<"Meas  1k: "<<meas_1k<<std::endl;
     }
-    if (entry%10000==0) {
+    if (curr_entry%10000==0) {
       double meas_10k = 10000/sw_10k_->RealTime();
       h_read_speed_10k->Fill(meas_10k);
-      h_read_speed_vs_nevt_10k->Fill(entry, meas_10k);
+      h_read_speed_vs_nevt_10k->Fill(curr_entry, meas_10k);
       sw_10k_->Reset();
       sw_10k_->Start(kFALSE);
+      double time_job = sw_job_->RealTime();
+      sw_job_->Start(kFALSE);
       //std::cout<<"Meas 10k: "<<meas_10k<<std::endl;
+      std::cout <<"UnixTime: "<< std::time(0) << "  JobTime(s): " << time_job << "  Nevent: " << curr_entry << " (" << ((float)curr_entry)/(ilast-ifirst)*100 
+                << " %)  ReadSpeed(event/s): " << (curr_entry+1)/time_job <<"        "<< std::endl;
     }
-    if (entry+1==nevents) {
+    if (entry+1==ilast) {
       sw_job_->Stop();
-      double meas_job = nevents/sw_job_->RealTime();
+      double meas_job = (ilast-ifirst)/sw_job_->RealTime();
       h_read_speed_job->Fill(meas_job);
-      h_read_speed_vs_nevt_job->Fill(nevents, meas_job);
+      h_read_speed_vs_nevt_job->Fill((ilast-ifirst), meas_job);
       h_runtime_job->Fill(sw_job_->RealTime()/60.);
-      h_runtime_vs_nevt_job->Fill(nevents, sw_job_->RealTime()/60.);
-      std::cout<<"JobMonitoringReport RunTime(s): "<<sw_job_->RealTime()<<" Nevents: "<<nevents<<" Nevt/s: "<<meas_job<<std::endl;
+      h_runtime_vs_nevt_job->Fill((ilast-ifirst), sw_job_->RealTime()/60.);
+      std::cout<<"JobMonitoringReport RunTime(s): "<<sw_job_->RealTime()<<" Nevents: "<<(ilast-ifirst)<<" Nevt/s: "<<meas_job<<std::endl;
       for (const auto& bad_file : bad_files)
-	std::cout<<"Badly readable file found: "<<bad_file.first<<" N_occurence: "<<bad_file.second<<std::endl;
+        std::cout<<"Badly readable file found: "<<bad_file.first<<" N_occurence: "<<bad_file.second<<std::endl;
+      std::cout<<"UnixTime-LastEvent: "<<std::time(0)<<std::endl;
     }
   }
 }
@@ -3866,12 +3868,9 @@ TH2F* eff_full_muon_miniiso04;
 TH2F* eff_full_muon_miniiso02;
 //TH2F* eff_full_muon_looseip2d;
 //TH2F* eff_full_muon_tightip2d;
+TH2D* eff_fast_muon_vetoid;
 TH2D* eff_fast_muon_looseid;
 TH2D* eff_fast_muon_mediumid;
-TH2D* eff_fast_muon_miniiso04;
-TH2D* eff_fast_muon_miniiso02;
-TH2D* eff_fast_muon_looseip2d;
-TH2D* eff_fast_muon_tightip2d;
 TH2F* eff_full_muon_veto;
 
 TGraphAsymmErrors* eff_trigger;
@@ -3881,13 +3880,9 @@ TH3D* eff_3D_trigger_lep_down;
 TH2D* eff_trigger_lep;
 TH2D* eff_trigger_lep_up;
 TH2D* eff_trigger_lep_down;
-#if USE_MRR2_PHO_TRIGGER == 0
 TH2D* eff_trigger_pho;
 TH2D* eff_trigger_pho_up;
 TH2D* eff_trigger_pho_down;
-#else
-TGraphAsymmErrors* eff_trigger_pho;
-#endif
 TH2D* eff_trigger_F_met;
 TH2D* eff_trigger_F_mu;
 TH2D* eff_trigger_F_ele;
@@ -3907,6 +3902,10 @@ TH1D* eff_full_fake_bmTop;
 TH1D* eff_full_fake_emTop;
 TH1D* eff_full_fake_bm0bTop;
 TH1D* eff_full_fake_em0bTop;
+TGraphAsymmErrors* eff_full_POG_W;
+TH1D* eff_full_POG_Top;
+TH1D* eff_full_POG_Top_up;
+TH1D* eff_full_POG_Top_down;
 /*
 TGraphAsymmErrors* eff_full_fake_bW;
 TGraphAsymmErrors* eff_full_fake_eW;
@@ -3938,14 +3937,14 @@ void AnalysisBase::init_syst_input() {
   // B-tagging
   // Efficiencies (Oct31 - test)
   TFile* f;
-  if (Sample.Contains("FastSim"))
+ if (Sample.Contains("FastSim"))
     f = TFile::Open("btag_eff/December_03/FastSim_SMS-T5ttcc.root");
   else if (Sample.Contains("WJetsToLNu"))
-    f = TFile::Open("btag_eff/December_03/WJetsToLNu.root");
+    f = TFile::Open("btag_eff/August_21/WJetsToLNu.root");
   else if (Sample.Contains("TT")||Sample.Contains("ST"))
-    f = TFile::Open("btag_eff/December_03/TT.root");
+    f = TFile::Open("btag_eff/August_21/TT.root");
   else
-    f = TFile::Open("btag_eff/December_03/QCD.root");
+    f = TFile::Open("btag_eff/August_21/QCD.root");
   eff_btag_b_loose  = ((TH2D*)f->Get("btag_eff_b_loose"))->ProfileX();
   eff_btag_c_loose  = ((TH2D*)f->Get("btag_eff_c_loose"))->ProfileX();
   eff_btag_l_loose  = ((TH2D*)f->Get("btag_eff_l_loose"))->ProfileX();
@@ -3975,7 +3974,7 @@ void AnalysisBase::init_syst_input() {
   btag_sf_full_medium_->load(*btag_calib_full_, BTagEntry::FLAV_UDSG, "incl");
   // Spring16 FastSim
   // This file needed minor formatting to be readable
-  btag_calib_fast_ =  new BTagCalibration("csvv2", "scale_factors/btag/fastsim_csvv2_ttbar_26_1_2017_fixed.csv");
+  btag_calib_fast_ =  new BTagCalibration("csvv2", "scale_factors/btag/deepcsv_13TEV_18SL_7_5_2019.csv");
   // Loose WP
   btag_sf_fast_loose_  = new BTagCalibrationReader(BTagEntry::OP_LOOSE, "central", {"up", "down"});
   btag_sf_fast_loose_->load(*btag_calib_fast_, BTagEntry::FLAV_B,    "fastsim");
@@ -4031,13 +4030,10 @@ void AnalysisBase::init_syst_input() {
   //eff_full_muon_looseip2d	    = getplot_TH2F("scale_factors/muon/fullsim/TnP_NUM_MediumIP2D_DENOM_LooseID_VAR_map_pt_eta.root",    "SF", "mu7");
   //eff_full_muon_tightip2d	    = getplot_TH2F("scale_factors/muon/fullsim/TnP_NUM_TightIP2D_DENOM_MediumID_VAR_map_pt_eta.root",    "SF", "mu8");
   // Muon FullSim-FastSim  SF - https://twiki.cern.ch/twiki/bin/view/CMS/SUSLeptonSF?rev=210#FullSim_FastSim_TTBar_MC_com_AN1
-  eff_fast_muon_looseid		    = getplot_TH2D("scale_factors/muon/fastsim/sf_mu_looseID.root",            "histo2D", "mu9");//2017
-  eff_fast_muon_mediumid	    = getplot_TH2D("scale_factors/muon/fastsim/SF.root",           "SF2D", "mu10"); 
-  eff_fast_muon_miniiso04	    = getplot_TH2D("scale_factors/muon/fastsim/sf_mu_looseID_mini04.root",     "histo2D", "mu11");//2017
-  eff_fast_muon_miniiso02	    = getplot_TH2D("scale_factors/muon/fastsim/sf_mu_mediumID_mini02.root",    "histo2D", "mu12");//2017
-  eff_fast_muon_looseip2d	    = getplot_TH2D("scale_factors/muon/fastsim/sf_mu_mediumID_looseIP2D.root", "histo2D", "mu13");//2017
-  eff_fast_muon_tightip2d           = getplot_TH2D("scale_factors/muon/fastsim/sf_mu_mediumID_tightIP2D.root", "histo2D", "mu14");//2017
-  // Inclusive Razor Scale Factors
+  eff_fast_muon_vetoid		    = getplot_TH2D("scale_factors/muon/fastsim/detailed_mu_full_fast_sf_18.root", "miniIso02_LooseId_sf", "mu9");
+  eff_fast_muon_looseid		    = getplot_TH2D("scale_factors/muon/fastsim/detailed_mu_full_fast_sf_18.root", "miniIso04_LooseId_sf", "mu10");
+  eff_fast_muon_mediumid	    = getplot_TH2D("scale_factors/muon/fastsim/detailed_mu_full_fast_sf_18.root", "miniIso02_MediumId_sf","mu11");
+ // Inclusive Razor Scale Factors
   eff_full_muon_veto                = getplot_TH2F("scale_factors/RazorRunAuxFiles_Expanded/"
 							  "efficiency_results_VetoMuonSelectionEffDenominatorGen_2016_Rereco_Golden.root",
 							  "ScaleFactor_VetoMuonSelectionEffDenominatorGen", "mu15");//2017
@@ -4123,11 +4119,11 @@ void AnalysisBase::init_syst_input() {
 //   }
 
 // Same trigger efficiencies but in the F region (needed for fake rates)
-//   const char* fin = "trigger_eff/SingleMuon2018_v190311.root";
-//   eff_trigger_F_met = getplot_TH2D(fin, "met", "trig_f_met");
-//   eff_trigger_F_mu  = getplot_TH2D(fin, "mu",  "trig_f_mu");
-//   eff_trigger_F_ele = getplot_TH2D(fin, "ele", "trig_f_ele");
-//   eff_trigger_F_pho = getplot_TH2D(fin, "pho", "trig_f_pho");
+  const char* fin = "trigger_eff/F_Region.root";
+  eff_trigger_F_met = getplot_TH2D(fin, "met", "trig_f_met");
+  eff_trigger_F_mu  = getplot_TH2D(fin, "mu",  "trig_f_mu");
+  eff_trigger_F_ele = getplot_TH2D(fin, "ele", "trig_f_ele");
+  eff_trigger_F_pho = getplot_TH2D(fin, "pho", "trig_f_pho");
 
   // W/Top (anti-/mass-)tag (and fake rate) scale factors
   // From Changgi
@@ -4601,8 +4597,8 @@ std::tuple<double, double, double> AnalysisBase::calc_ele_sf(eventBuffer& data, 
 #if USE_POG_ID > 0
     bool id_veto_noiso   = (data.Electron[i].cutBased >= 1.0);
 #endif
-    bool id_loose_noiso  = (data.Electron[i].mvaFall17noIso_WPL == 1.0);
-    bool id_select_noiso = (data.Electron[i].mvaFall17noIso_WP90 == 1.0);
+    bool id_loose_noiso  = (data.Electron[i].mvaFall17V2noIso_WPL == 1.0);
+    bool id_select_noiso = (data.Electron[i].mvaFall17V2noIso_WP90 == 1.0);
     // Apply reconstruction scale factor - Warning! strange binning (pt vs eta)
     geteff2D(eff_full_ele_reco, eta, pt, reco_sf, reco_sf_err);
     // If pt is below 20 or above 80 GeV increase error by 1%
@@ -4824,17 +4820,17 @@ std::tuple<double, double, double> AnalysisBase::calc_muon_sf(eventBuffer& data,
       else if (MU_VETO_MINIISO_CUT == 0.4)
 	geteff2D(eff_full_muon_miniiso04, pt, eta, sf, sf_err);
       weight_veto *= sf;
-      if (isFastSim) {
-	geteff2D(eff_fast_muon_miniiso02, pt, eta, sf, sf_err);
-	weight_veto *= sf;
-      }
+//       if (isFastSim) {
+// 	geteff2D(eff_fast_muon_miniiso02, pt, eta, sf, sf_err);
+// 	weight_veto *= sf;
+//       }
       // Apply IP efficiency scale factor
       //geteff2D(eff_full_muon_looseip2d, pt, eta, sf, sf_err);
       //weight_veto *= sf;
-      if (isFastSim) {
-	geteff2D(eff_fast_muon_looseip2d, pt, eta, sf, sf_err);
-	weight_veto *= sf;
-      }
+//       if (isFastSim) {
+// 	geteff2D(eff_fast_muon_looseip2d, pt, eta, sf, sf_err);
+// 	weight_veto *= sf;
+//       }
       // Apply systematics
       weight_veto *= get_syst_weight(1, 0.03, nSigmaMuonFullSimSF);
       if (isFastSim) weight_veto *= get_syst_weight(1, 0.02, nSigmaMuonFastSimSF);
@@ -4877,17 +4873,17 @@ std::tuple<double, double, double> AnalysisBase::calc_muon_sf(eventBuffer& data,
       else if (MU_LOOSE_MINIISO_CUT == 0.4)
 	geteff2D(eff_full_muon_miniiso04, pt, eta, sf, sf_err);
       weight_loose *= sf;
-      if (isFastSim) {
-	geteff2D(eff_fast_muon_miniiso04, pt, eta, sf, sf_err);
-	weight_loose *= sf;
-      }
+//       if (isFastSim) {
+// 	geteff2D(eff_fast_muon_miniiso04, pt, eta, sf, sf_err);
+// 	weight_loose *= sf;
+//       }
       // Apply IP efficiency scale factor
       //geteff2D(eff_full_muon_looseip2d, pt, eta, sf, sf_err);
       //weight_loose *= sf;
-      if (isFastSim) {
-	geteff2D(eff_fast_muon_looseip2d, pt, eta, sf, sf_err);
-	weight_loose *= sf;
-      }
+//       if (isFastSim) {
+// 	geteff2D(eff_fast_muon_looseip2d, pt, eta, sf, sf_err);
+// 	weight_loose *= sf;
+//       }
       // Apply systematics
       weight_loose *= get_syst_weight(1, 0.03, nSigmaMuonFullSimSF);
       if (isFastSim) weight_loose *= get_syst_weight(1, 0.02, nSigmaMuonFastSimSF);
@@ -4909,27 +4905,27 @@ std::tuple<double, double, double> AnalysisBase::calc_muon_sf(eventBuffer& data,
       // Apply ID scale factor
       geteff2D(eff_full_muon_mediumid, pt, eta, sf, sf_err);
       weight_select *= sf;
-      if (isFastSim) {
-	geteff2D(eff_fast_muon_mediumid, pt, eta, sf, sf_err);
-	weight_select *= sf;
-      }
+//       if (isFastSim) {
+// 	geteff2D(eff_fast_muon_mediumid, pt, eta, sf, sf_err);
+// 	weight_select *= sf;
+//       }
       // Apply Isolation scale factor
       if (MU_SELECT_MINIISO_CUT == 0.2)
 	geteff2D(eff_full_muon_miniiso02, pt, eta, sf, sf_err);
       else if (MU_SELECT_MINIISO_CUT == 0.4)
 	geteff2D(eff_full_muon_miniiso04, pt, eta, sf, sf_err);
       weight_select *= sf;
-      if (isFastSim) {
-	geteff2D(eff_fast_muon_miniiso02, pt, eta, sf, sf_err);
-	weight_select *= sf;
-      }
+//       if (isFastSim) {
+// 	geteff2D(eff_fast_muon_miniiso02, pt, eta, sf, sf_err);
+// 	weight_select *= sf;
+//       }
       // Apply IP efficiency scale factor
       //geteff2D(eff_full_muon_tightip2d, pt, eta, sf, sf_err);
       //weight_select *= sf;
-      if (isFastSim) {
-	geteff2D(eff_fast_muon_tightip2d, pt, eta, sf, sf_err);
-	weight_select *= sf;
-      }
+//       if (isFastSim) {
+// 	geteff2D(eff_fast_muon_tightip2d, pt, eta, sf, sf_err);
+// 	weight_select *= sf;
+//       }
       // Apply systematics
       weight_select *= get_syst_weight(1, 0.03, nSigmaMuonFullSimSF);
       if (isFastSim) weight_select *= get_syst_weight(1, 0.02, nSigmaMuonFastSimSF);
