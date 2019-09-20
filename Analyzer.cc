@@ -8,7 +8,6 @@
 #include <unistd.h>
 #include <vector>
 
-#define JEC 	1
 #include "tnm.h"
 #include "settings_Tamas.h" // Define all Analysis specific settings here
 
@@ -296,7 +295,7 @@ int main(int argc, char** argv) {
 
     cout << "Normalization variables:" << endl;
     ana.calc_weightnorm_histo_from_ntuple(cmdline.allFileNames, settings.intLumi, vname_signal, 
-					  settings.runOnSkim, settings.varySystematics, out_dir); // histo names given in settings.h
+					  settings.runOnSkim, settings.varySystematics, out_dir,1); // histo names given in settings.h
 
   // Find the index of the current signal
     signal_index = samplename.Contains("T2tt");
@@ -456,8 +455,6 @@ int main(int argc, char** argv) {
       w = 1;
       for (const auto& region : ana.scale_factors) ana.sf_weight[region.first] = 1;
 
-	    //if (!ana.pass_duplicate(ev)) continue;
-
       // Only analyze events that are in the JSON file
       //if (settings.useJSON ? json_run_ls[data.evt.RunNumber][data.evt.LumiBlock] : 1) {
 
@@ -573,6 +570,12 @@ int main(int argc, char** argv) {
 	  // Event weights
 	  // Lumi normalization
 	  // Signals are binned so we get the total weight separately for each bin
+	  if (cmdline.isSignal) {
+            std::pair<double, double> susy_mass = ana.get_signal_mass(ev,cmdline.fileNames);
+            if (debug==-1) std::cout<<" mass = "<< susy_mass.first <<", " << susy_mass.second << std::endl;
+            int bin = vh_weightnorm_signal[signal_index]->FindBin(susy_mass.first, susy_mass.second);
+            weightnorm = vh_weightnorm_signal[signal_index]->GetBinContent(bin);
+          }
 	  //if (cmdline.isSignal) {
 	  //  int bin = vh_weightnorm_signal[signal_index]->FindBin(signal_index ? data.evt.SUSY_Stop_Mass : data.evt.SUSY_Gluino_Mass, data.evt.SUSY_LSP_Mass);
 	  //  weightnorm = vh_weightnorm_signal[signal_index]->GetBinContent(bin);
@@ -753,7 +756,7 @@ int main(int argc, char** argv) {
     if (debug==-1) std::cout<<"---------------------------------------"<<std::endl<<std::endl;
 
     // Measure speed (useful info for batch/parallel jobs)
-    ana.job_monitoring(entry, nevents, stream.filename());
+    ana.job_monitoring(entry, ifirst, ilast, stream.filename());
     if (debug>1) std::cout<<"Analyzer::main: job_monitoring ok, end event"<<std::endl;
 
   } // end event loop
