@@ -7,10 +7,25 @@
 using namespace std;
 //_______________________________________________________
 //                  Calculate variables
+// Cut variables
+static size_t cut_index;
+std::map<char, unsigned int> cutbits;
+std::map<char, bool> pass_all_cuts;
+
+// N-1 weights
+std::map<char, std::vector<double> > w_nm1;
 
 void
 Analysis::calculate_variables(eventBuffer& data, const unsigned int& syst_index)
 {
+  cut_index = -1;
+  // Calculate decision of each individual cut
+  for (const auto& region : analysis_cuts) {
+    cutbits[region.first] = 0;
+    for (size_t i=0, n=analysis_cuts[region.first].size(); i<n; ++i)
+      if (analysis_cuts[region.first][i].func()) cutbits[region.first] += 1<<i;
+	pass_all_cuts[region.first] = (cutbits[region.first]==(unsigned int)((1<<analysis_cuts[region.first].size())-1));
+  }
 }
 
 //_______________________________________________________
@@ -562,31 +577,32 @@ Analysis::apply_scale_factors(eventBuffer& data, const unsigned int& s, const st
   double sf_btag_loose = sf_btag.first, sf_btag_medium = sf_btag.second;
   i+=2;
 
-// #if TOP == 0
-//   // W tagging SF  (4 sigma - fullsim, fastsim, mistag, mistag fastsim)
+#if TOP == 0
+  // W tagging SF  (4 sigma - fullsim, fastsim, mistag, mistag fastsim)
 //   double sf_w = calc_w_tagging_sf(data, nSigmaSFs[i][s], nSigmaSFs[i+1][s], nSigmaSFs[i+2][s], nSigmaSFs[i+3][s], isFastSim);
-//   // fake W tagging SFs (2 sigma)
+  // fake W tagging SFs (2 sigma)
 //   double sf_fake_mW = calc_fake_w_mass_tagging_sf(data, nSigmaSFs[i+4][s]);
 //   double sf_fake_aW = calc_fake_w_anti_tagging_sf(data, nSigmaSFs[i+5][s]);
-// #endif
-//   i+=6;
-// 
-// #if TOP != 0
-//   // top tagging SF (4 sigma - fullsim, fastsim, mistag, mistag fastsim)
+#endif
+  i+=6;
+
+#if TOP != 0
+  double sf_w = calc_w_tagging_sf(data, nSigmaSFs[i][s], nSigmaSFs[i+1][s], nSigmaSFs[i+2][s], nSigmaSFs[i+3][s], isFastSim);
+  // top tagging SF (4 sigma - fullsim, fastsim, mistag, mistag fastsim)
 //   double sf_top = calc_top_tagging_sf(data, nSigmaSFs[i][s], nSigmaSFs[i+1][s], nSigmaSFs[i+2][s], nSigmaSFs[i+3][s], isFastSim);
-//   // fake top tagging SFs (3 sigmas)
+  // fake top tagging SFs (3 sigmas)
 //   double sf_fake_0b_mTop = calc_fake_top_0b_mass_tagging_sf(data, nSigmaSFs[i+4][s]);
 //   double sf_fake_MTop = calc_fake_top_mass_tagging_sf(data, nSigmaSFs[i+5][s]);
 //   double sf_fake_aTop = calc_fake_top_anti_tagging_sf(data, nSigmaSFs[i+6][s]);
-// #endif
-//   i+=7;
+#endif
+  i+=7;
 
 //   double sf_ele_veto=1,  sf_ele_medium=1;
 //   double sf_muon_veto=1, sf_muon_medium=1;
 //   double sf_btag_loose = 1, sf_btag_medium = 1;
-  double sf_fake_mW=1, sf_fake_aW=1, sf_w=1;
+//   double sf_fake_mW=1, sf_fake_aW=1, sf_w=1;
 #if TOP == 1
-  double sf_top=1, sf_fake_0b_mTop=1, sf_fake_MTop=1, sf_fake_aTop=1;
+//   double sf_top=1, sf_fake_0b_mTop=1, sf_fake_MTop=1, sf_fake_aTop=1;
 #endif
   // Select scale factors to use
   for (auto& sf : scale_factors) sf.second.clear();
@@ -596,73 +612,72 @@ Analysis::apply_scale_factors(eventBuffer& data, const unsigned int& s, const st
   scale_factors['S'].push_back(sf_ele_veto);
   scale_factors['S'].push_back(sf_muon_veto);
   scale_factors['S'].push_back(sf_btag_medium);
-  scale_factors['S'].push_back(sf_w);
+//   scale_factors['S'].push_back(sf_w);
 
   scale_factors['s'] = scale_factors['S'];
 
   scale_factors['Q'].push_back(sf_ele_veto);
   scale_factors['Q'].push_back(sf_muon_veto);
   scale_factors['Q'].push_back(sf_btag_loose);
-  scale_factors['Q'].push_back(sf_fake_aW);
+//   scale_factors['Q'].push_back(sf_fake_aW);
 
   scale_factors['q'] = scale_factors['Q'];
 
   scale_factors['T'].push_back(sf_ele_veto);
   scale_factors['T'].push_back(sf_muon_veto);
   scale_factors['T'].push_back(sf_btag_medium);
-  scale_factors['T'].push_back(sf_w);
+//   scale_factors['T'].push_back(sf_w);
 
   scale_factors['W'].push_back(sf_ele_veto);
   scale_factors['W'].push_back(sf_muon_veto);
   scale_factors['W'].push_back(sf_btag_loose);
-  scale_factors['W'].push_back(sf_fake_mW);
+//   scale_factors['W'].push_back(sf_fake_mW);
 
   scale_factors['L'] = scale_factors['W'];
 
   scale_factors['Z'].push_back(sf_ele_medium);
   scale_factors['Z'].push_back(sf_muon_medium);
-  scale_factors['Z'].push_back(sf_fake_mW);
+//   scale_factors['Z'].push_back(sf_fake_mW);
 
   scale_factors['G'].push_back(sf_ele_veto);
   scale_factors['G'].push_back(sf_muon_veto);
-  scale_factors['G'].push_back(sf_fake_mW);
+//   scale_factors['G'].push_back(sf_fake_mW);
 
   scale_factors['z'].push_back(sf_ele_medium);
   scale_factors['z'].push_back(sf_muon_medium);
-  scale_factors['z'].push_back(sf_w);
+//   scale_factors['z'].push_back(sf_w);
 
 #else
 
   // Top Analysis
   scale_factors['S'].push_back(sf_ele_veto);
   scale_factors['S'].push_back(sf_muon_veto);
-  scale_factors['S'].push_back(sf_top);
+  scale_factors['S'].push_back(sf_w);
 
   scale_factors['s'] = scale_factors['S'];
 
   scale_factors['Q'].push_back(sf_ele_veto);
   scale_factors['Q'].push_back(sf_muon_veto);
-  scale_factors['Q'].push_back(sf_fake_aTop);
+//   scale_factors['Q'].push_back(sf_fake_aTop);
   scale_factors['Q'].push_back(sf_btag_loose);
 
   scale_factors['q'] = scale_factors['Q'];
 
   scale_factors['T'].push_back(sf_ele_veto);
   scale_factors['T'].push_back(sf_muon_veto);
-  scale_factors['T'].push_back(sf_top);
 
   scale_factors['W'].push_back(sf_ele_veto);
   scale_factors['W'].push_back(sf_muon_veto);
-  scale_factors['W'].push_back(sf_fake_0b_mTop);
+//   scale_factors['W'].push_back(sf_fake_0b_mTop);
   scale_factors['W'].push_back(sf_btag_loose);
 
   scale_factors['G'].push_back(sf_ele_veto);
   scale_factors['G'].push_back(sf_muon_veto);
-  scale_factors['G'].push_back(sf_fake_MTop);
+//   scale_factors['G'].push_back(sf_fake_MTop);
 
   scale_factors['Z'].push_back(sf_ele_medium);
   scale_factors['Z'].push_back(sf_muon_medium);
-  scale_factors['Z'].push_back(sf_fake_MTop);
+//   scale_factors['Z'].push_back(sf_fake_MTop);
 
   scale_factors['L'] = scale_factors['W'];
 
@@ -674,7 +689,29 @@ Analysis::apply_scale_factors(eventBuffer& data, const unsigned int& s, const st
   scale_factors['f'].push_back(sf_ele_veto);
   scale_factors['f'].push_back(sf_muon_veto);
   scale_factors['f'].push_back(sf_btag_medium);
+  
+  scale_factors['N'].push_back(sf_ele_veto);
+  scale_factors['N'].push_back(sf_muon_veto);
+  //scale_factors['N'].push_back(sf_btag_medium);
+  scale_factors['n'].push_back(sf_ele_veto);
+  scale_factors['n'].push_back(sf_muon_veto);
+  scale_factors['n'].push_back(sf_btag_loose);
 
+// N-1 weights
+// Calculate weight for all search regions, but without a specific weight
+for (const auto& region : analysis_cuts) w_nm1[region.first].resize(20,1);
+if (!isData) for (const auto& region : analysis_cuts) {
+  size_t n=all_weights.size()+scale_factors[region.first].size();
+  // [i] is the index of the weight to exclude
+  for (size_t i=0; i<n; ++i) {
+    w_nm1[region.first][i] = 1;
+    // [j] all the rest is applied
+    for (size_t j=0; j<n; ++j) if (j!=i) {
+      if (j<all_weights.size()) w_nm1[region.first][i] *= all_weights[j];
+      else  w_nm1[region.first][i] *= scale_factors[region.first][j-all_weights.size()];
+      }
+    }
+  }
 }
 
 //_______________________________________________________
@@ -4830,13 +4867,13 @@ Analysis::fill_analysis_histos(eventBuffer& data, const unsigned int& syst_index
   bool iscomFFsim = TString(sample).Contains("TTJets_madgraphMLM");
   if(iscomFFsim){ 
     for (size_t i=0; i<data.FatJet.size(); ++i) {
-      if (passTightWTag[i]) {
+      if (passBoostMassTag[i]) {
         h_AK8Jet1Pt_eta_GenW_no_W->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
         h_AK8Jet1Pt_eta_GenTop_no_Top->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
-        if (hasGenW[i])    h_AK8Jet1Pt_eta_GenW_W->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
-        if (hasGenTop[i])  h_AK8Jet1Pt_eta_GenTop_Top->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
-        if (!hasGenW[i])   h_AK8Jet1Pt_eta_FakeW_W->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
-        if (!hasGenTop[i]) h_AK8Jet1Pt_eta_FakeTop_Top->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
+        if (hasGenHadW[i])    h_AK8Jet1Pt_eta_GenW_W->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
+	if (hasGenHadTop[i])  h_AK8Jet1Pt_eta_GenTop_Top->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
+	if (!hasGenHadW[i])   h_AK8Jet1Pt_eta_FakeW_W->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
+	if (!hasGenHadTop[i]) h_AK8Jet1Pt_eta_FakeTop_Top->Fill(data.FatJet[i].pt,std::abs(data.FatJet[i].eta),w);
       }
     }
   }
