@@ -126,7 +126,6 @@ int main(){
   MakeControlPlots(ColorCode,ColorCodePlus,File,HIST);
 
   MCtot = MCSTACK(RootFileName,HIST);
-
   
   //SaveYields(RootFileName,HIST,MCtot);
   //
@@ -136,7 +135,7 @@ int main(){
   //histogram container test in this main code
   //string kk;
   //cout<<MCtot["AnLepEnergy"]->Integral()<<endl;
-  //cout<<HIST[0]["AnLepEnergy"]->Integral()<<endl;
+  //cout<<HIST[1]["AnLepEnergy"]->Integral()<<endl;
   //cin>> kk;
 }
 
@@ -146,7 +145,7 @@ void MakeControlPlots (int ColorCode[][15], int ColorCodePlus[], TFile *File[], 
 
   //Color_t color[Num];
   //int color[Num] = {1, 12, 862, 841, 403, 803, 803, 601, 433, 418, 401,619,633};
-  int color[Num] = {1, 433,12, 601, 803, 418, 401, 619, 633};
+  int color[Num] = {1, 3, 433, 12, 601, 803, 418, 401, 619, 633};
 
 
   /*
@@ -285,12 +284,12 @@ void MakeControlPlots (int ColorCode[][15], int ColorCodePlus[], TFile *File[], 
   HIST[0][histkey]->SetMarkerSize(1.3);
   HIST[0][histkey]->SetMarkerColor(color[0]);
 
-// 			File[1]->cd();
-// 			Hist = (TH1F*)gDirectory->Get(key->GetName())->Clone(histkey.c_str());
-// 			HIST[1][histkey]=Hist;
-// 			HIST[1][histkey]->SetLineColor(color[1]);
-// 			HIST[1][histkey]->SetLineStyle(2);
-// 			HIST[1][histkey]->SetLineWidth(4);
+ 			File[1]->cd();
+ 			Hist = (TH1F*)gDirectory->Get(key->GetName())->Clone(histkey.c_str());
+ 			HIST[1][histkey]=Hist;
+ 			HIST[1][histkey]->SetLineColor(color[1]);
+ 			HIST[1][histkey]->SetLineStyle(2);
+			HIST[1][histkey]->SetLineWidth(4);
 // 
 // 			File[2]->cd();
 // 			Hist = (TH1F*)gDirectory->Get(key->GetName())->Clone(histkey.c_str());
@@ -313,7 +312,7 @@ void MakeControlPlots (int ColorCode[][15], int ColorCodePlus[], TFile *File[], 
 // 			HIST[4][histkey]->SetLineStyle(2);
 // 			HIST[4][histkey]->SetLineWidth(4);
 
-  for(int i=1;i<Num;i++)
+  for(int i=2;i<Num;i++)
   {
     File[i]->cd();
 
@@ -420,11 +419,17 @@ map<TString, TH1F *> MCSTACK (char RootFileName[][200], map<TString , TH1F *> HI
     }
   }
 
+  if(TString(histname).Contains("phi_P")){
+    for(int i=0;i<Num;i++){
+      HIST[i][histname]->Rebin(5);
+    }
+  }
+
 
   histtitle = HIST[0][histname]->GetXaxis()->GetTitle();
 
   THStack *MCStack = new THStack(histname.c_str(),histtitle.c_str());
-  for(int k=1;k<Num;k++) {MCStack->Add(HIST[k][histname]);}//stack MCs
+  for(int k=2;k<Num;k++) {MCStack->Add(HIST[k][histname]);}//stack MCs
 
   /*********************   save the MC stack -> root files  **********/
   //STACK_File->cd();
@@ -439,8 +444,8 @@ map<TString, TH1F *> MCSTACK (char RootFileName[][200], map<TString , TH1F *> HI
   gPad->SetGridx();
   gPad->SetGridy();
 
-  TH1F *Tot_MC = (TH1F*)HIST[1][histname]->Clone();
-  for(int i=1;i<Num;i++) {Tot_MC->Add(HIST[i][histname]);}
+  TH1F *Tot_MC = (TH1F*)HIST[2][histname]->Clone();
+  for(int i=2;i<Num;i++) {Tot_MC->Add(HIST[i][histname]);}
 
   Tot_MC->SetFillColor(13);
   Tot_MC->SetFillStyle(3235);
@@ -536,7 +541,7 @@ map<TString, TH1F *> MCSTACK (char RootFileName[][200], map<TString , TH1F *> HI
 
 
   if(!(TString(histname.c_str()).Contains("_S")))  HIST[0][histname]->Draw("samePE1");
-//   HIST[1][histname]->Draw("sameHIST");
+   HIST[1][histname]->Draw("sameHIST");
 //   HIST[2][histname]->Draw("sameHIST");
 //   HIST[3][histname]->Draw("sameHIST");
 //   HIST[4][histname]->Draw("sameHIST");
@@ -581,32 +586,32 @@ map<TString, TH1F *> MCSTACK (char RootFileName[][200], map<TString , TH1F *> HI
   else leg->SetHeader("Q region, nodPhi");
   }
   else if(TString(histname.c_str()).Contains("nonb")){
-  if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("Q region, nonb, 6 #leq jet");
-  else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("Q region, nonb, 3 #leq jet #leq 5");
-  else leg->SetHeader("Q region, nonb");
-  }
-  else if(TString(histname.c_str()).Contains("notau21")){
-  if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("Q region, notau21, 6 #leq jet");
-  else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("Q region, notau21, 3 #leq jet #leq 5");
-  else leg->SetHeader("Q region, notau21");
-  }
-  else {
-  if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("Q region, 6 #leq jet");
-  else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("Q region, 3 #leq jet #leq 5");
-  else leg->SetHeader("Q region");
-  }
+    if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("Q region, nonb, 6 #leq jet");
+    else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("Q region, nonb, 3 #leq jet #leq 5");
+    else leg->SetHeader("Q region, nonb");
+    }
+    else if(TString(histname.c_str()).Contains("notau21")){
+    if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("Q region, notau21, 6 #leq jet");
+    else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("Q region, notau21, 3 #leq jet #leq 5");
+    else leg->SetHeader("Q region, notau21");
+    }
+    else {
+    if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("Q region, 6 #leq jet");
+    else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("Q region, 3 #leq jet #leq 5");
+    else leg->SetHeader("Q region");
+    }
   }
   else if(TString(histname.c_str()).Contains("_T")){
-  if(TString(histname.c_str()).Contains("noMT")){
-  if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("T region, noMT, 6 #leq jet");
-  else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("T region, noMT, 3 #leq jet #leq 5");
-  else leg->SetHeader("T region, noMT");
-  }
-  else {
-  if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("T region, 6 #leq jet");
-  else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("T region, 3 #leq jet #leq 5");
-  else leg->SetHeader("T region");
-  }
+    if(TString(histname.c_str()).Contains("noMT")){
+      if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("T region, noMT, 6 #leq jet");
+      else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("T region, noMT, 3 #leq jet #leq 5");
+      else leg->SetHeader("T region, noMT");
+    }
+    else {
+      if(TString(histname.c_str()).Contains("nj6"))leg->SetHeader("T region, 6 #leq jet");
+      else if(TString(histname.c_str()).Contains("nj35"))leg->SetHeader("T region, 3 #leq jet #leq 5");
+      else leg->SetHeader("T region");
+    }
   }
   else if(TString(histname.c_str()).Contains("_W")){
   if(TString(histname.c_str()).Contains("noMT")){
@@ -644,14 +649,14 @@ map<TString, TH1F *> MCSTACK (char RootFileName[][200], map<TString , TH1F *> HI
   leg->AddEntry((TObject*)0,legentry,"");
   }
 
-// 		sprintf(legentry, "%.2f",HIST[1][histname]->Integral());
-// 		//leg->AddEntry(HIST[1][histname],RootFileName[1],"L");
-// 		leg->AddEntry(HIST[1][histname],"T5ttcc","L");
-// 		leg->AddEntry((TObject*)0,legentry,"");
-// 
+ 		sprintf(legentry, "%.2f",HIST[1][histname]->Integral());
+ 		//leg->AddEntry(HIST[1][histname],RootFileName[1],"L");
+ 		leg->AddEntry(HIST[1][histname],"T1tttt","L");
+ 		leg->AddEntry((TObject*)0,legentry,"");
+ 
 // 		sprintf(legentry, "%.2f",HIST[2][histname]->Integral());
 // 		//leg->AddEntry(HIST[2][histname],RootFileName[2],"L");
-// 		leg->AddEntry(HIST[2][histname],"T5tttt","L");
+// 		leg->AddEntry(HIST[2][histname],"T1tttt","L");
 // 		leg->AddEntry((TObject*)0,legentry,"");
 // 
 // 		sprintf(legentry, "%.2f",HIST[3][histname]->Integral());
@@ -664,7 +669,7 @@ map<TString, TH1F *> MCSTACK (char RootFileName[][200], map<TString , TH1F *> HI
 // 		leg->AddEntry(HIST[4][histname],"T2tt","L");
 // 		leg->AddEntry((TObject*)0,legentry,"");
 
-  for(int i=1;i<Num;i++){
+  for(int i=2;i<Num;i++){
   //cout << RootFileName[i] << endl;
   sprintf(legentry, "%.2f",HIST[i][histname]->Integral());
   if((TString)RootFileName[i]=="TT") leg->AddEntry(HIST[i][histname],"t#bar{t}","f");
@@ -735,7 +740,7 @@ map<TString, TH1F *> MCSTACK (char RootFileName[][200], map<TString , TH1F *> HI
 
   dividend->GetYaxis()->SetTitleOffset(0.35);
   dividend->GetYaxis()->SetTitleSize(0.12);//dividend->SetTitleSize(0.12,"Y");
-  for(int i=1;i<=Tot_MC->GetNbinsX();i++){
+  for(int i=2;i<=Tot_MC->GetNbinsX();i++){
     dividend1->SetBinContent(i,1);
     if(Tot_MC->GetBinContent(i)==0) dividend1->SetBinError(i,0);
     else dividend1->SetBinError(i,Tot_MC->GetBinError(i)/Tot_MC->GetBinContent(i));
@@ -799,7 +804,7 @@ return totmc;
 void SaveYields( char RootFileName[][200], map<TString, TH1F *> HIST[], map<TString, TH1F *> MCtot ){
 //GetTitle(),GetName(),GetBinError()//0->underflow
   FILE *table = fopen("Yields.txt","w");
-
+  std::cout << "Num: " << Num << std::endl;
   string histname;
   string RooName[Num];
   
@@ -816,16 +821,17 @@ void SaveYields( char RootFileName[][200], map<TString, TH1F *> HIST[], map<TStr
   }
   
   for(int i=0;i<Num;i++){
-  cout<<RooName[i]<<endl;
+    cout<<RooName[i]<<endl;
   }
+  
   for(int i=0;i<Num;i++)
   {
-
-  for( std::map<TString, TH1F *>::iterator histoIter = HIST[0].begin(); histoIter != HIST[0].end(); ++histoIter)
-  {	
-  histname = (*histoIter).first;
-  Integrals[i][histname]=HIST[i][histname]->Integral();
-  }
+    for( std::map<TString, TH1F *>::iterator histoIter = HIST[0].begin(); histoIter != HIST[0].end(); ++histoIter)
+    {	
+      histname = (*histoIter).first;
+      cout <<histname<<endl;
+      Integrals[i][histname]=HIST[i][histname]->Integral();
+    }
   }
 
   for( std::map<TString, TH1F *>::iterator histoIter = HIST[0].begin(); histoIter != HIST[0].end(); ++histoIter)
@@ -838,10 +844,12 @@ void SaveYields( char RootFileName[][200], map<TString, TH1F *> HIST[], map<TStr
   
   for( std::map<TString, TH1F *>::iterator histoIter = HIST[0].begin(); histoIter != HIST[0].end(); ++histoIter)
   {
-  histname = (*histoIter).first;
+    histname = (*histoIter).first;
     for(int i=0;i<Num;i++){
-    HIST[i][histname]->Rebin(Nbins[histname]);
+      if(TString(histname).Contains("tau")) continue;	
+      HIST[i][histname]->Rebin(Nbins[histname]);
     }
+  if(TString(histname).Contains("tau")) continue;
   MCtot[histname]->Rebin(Nbins[histname]);
 
   }// NBins -> 1Bin // uncertainty calculation
