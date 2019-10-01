@@ -76,7 +76,6 @@ public:
 
   void fill_common_histos(eventBuffer&, const bool&, const bool&, const unsigned int&, const double&, const std::vector<std::string>&);
 
-
   double get_xsec_from_ntuple(const std::vector<std::string>&, const bool&);
 
   std::pair<double, double> get_xsec_totweight_from_txt_file(const std::string&);
@@ -91,7 +90,7 @@ public:
 
   double get_isr_weight(eventBuffer&, const double&, const unsigned int&, const bool&);
   
-   std::pair<double, double> get_signal_mass(eventBuffer&, const int&); 
+  std::pair<double, double> get_signal_mass(eventBuffer&, const int&); 
 
   double get_pileup_weight(eventBuffer&, const double&, const unsigned int&, const bool&);
 
@@ -296,38 +295,25 @@ AnalysisBase::define_preselections(const eventBuffer& data)
 #define B_CSV_MEDIUM_CUT       0.4941
 #define B_CSV_TIGHT_CUT        0.8001
 
-
-/*
-   Boosted W-tagging:
-
-   Latest WPs/SFs:
-   https://twiki.cern.ch/twiki/bin/view/CMS/JetWtagging?rev=54#Working_points_and_scale_factors
-
-   W-Tag selection:
-   - AK8 CHS jets
-   - pt > 200
-   - |eta| < 2.4
-   - 65 <= Puppi SD Mass (corrected) < 105
-   - Medium WP: Puppi tau21 < 0.4
-
-*/
+//Boosted W-tagging:
+//https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetWtagging#2018_scale_factors_and_correctio
 
 #define W_PT_CUT            200
 #define W_ETA_CUT           2.4
 #define W_SD_MASS_CUT_LOW   65
 #define W_SD_MASS_CUT_HIGH  105
-#define W_TAU21_LOOSE_CUT   0.55
-#define W_TAU21_TIGHT_CUT   0.45 // There is a Tighter WP: 0.35
+#define W_TAU21_LOOSE_CUT   0.75 // was 55
+#define W_TAU21_TIGHT_CUT   0.35 // For 2018
 
-#define W_TAG_HP_SF       0.97
-#define W_TAG_HP_SF_ERR   0.06
-#define W_TAG_LP_SF       1.14
-#define W_TAG_LP_SF_ERR   0.29
-#define W_TAG_JMS_SF      0.982
-#define W_TAG_JMS_SF_ERR  0.009
-#define W_TAG_JMR_SF      1.09
-#define W_TAG_JMR_SF_ERR  0.10
-#define W_TAG_SIGMA_MC    10.1
+#define W_TAG_HP_SF       0.964 //For 2018
+#define W_TAG_HP_SF_ERR   0.032 //For 2018
+#define W_TAG_LP_SF       1.118 //For 2018
+#define W_TAG_LP_SF_ERR   0.143 //For 2018
+#define W_TAG_JMS_SF      0.982 // not used now
+#define W_TAG_JMS_SF_ERR  0.009 // not used now
+#define W_TAG_JMR_SF      1.09  // not used now
+#define W_TAG_JMR_SF_ERR  0.10  // not used now
+#define W_TAG_SIGMA_MC    10.1  // not used now
 
 /*
 
@@ -356,8 +342,6 @@ Choose:
 - Puppi tau32 < 0.46
 - max subjet BTag DeepCSV > 0.1522
 */
-
-#define USE_BTAG 1
 
 #define TOP_PT_CUT            400
 #define TOP_ETA_CUT           2.4
@@ -427,10 +411,6 @@ Choose:
 
 */
 
-#define USE_MVA_ID             1
-#define USE_POG_ID             1
-
-
 #define ELE_VETO_PT_CUT        5
 #define ELE_VETO_ETA_CUT       2.5
 #define ELE_VETO_MINIISO_CUT   0.1
@@ -451,8 +431,8 @@ Choose:
 #define ELE_SELECT_IP_D0_CUT   0.05
 #define ELE_SELECT_IP_DZ_CUT   0.1
 
-//#define ELE_TIGHT_PT_CUT       30
-#define ELE_TIGHT_PT_CUT       10
+#define ELE_TIGHT_PT_CUT       30
+// #define ELE_TIGHT_PT_CUT       10
 #define ELE_TIGHT_ETA_CUT      2.5
 #define ELE_TIGHT_IP_D0_CUT    0.05
 #define ELE_TIGHT_IP_DZ_CUT    0.1
