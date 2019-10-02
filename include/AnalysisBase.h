@@ -20,7 +20,7 @@
 #include "Razor.h"
 
 #include "BTagCalibrationStandalone.cpp"
-
+using namespace std;
 // _____________________________________________________________
 //        AnalysisBase: Methods common in all analysis
 
