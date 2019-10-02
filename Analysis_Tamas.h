@@ -3755,13 +3755,12 @@ void
 Analysis::fill_analysis_histos(eventBuffer& data, const unsigned int& syst_index, const double& weight)
 {
   double w = weight; // No scale factor applied
-  bool isSingleMuon      = TString(sample).Contains("SingleMuon");
-  bool isMET   = TString(sample).Contains("MET");
-  bool isJetHT = TString(sample).Contains("JetHT");
+//   bool isSingleMuon      = TString(sample).Contains("SingleMuon");
+//   bool isMET   = TString(sample).Contains("MET");
+//   bool isJetHT = TString(sample).Contains("JetHT");
 //   bool isEGamma = TString(sample).Contains("EGamma");
   bool proceed = false;
-  if (isData) { if ((isMET || isJetHT || isSingleMuon) && !(data.PuppiMET_phi<-0.6 && data.PuppiMET_phi>-1.8))  proceed=true;  }
-
+  if (!(data.PuppiMET_phi<-0.6 && data.PuppiMET_phi>-1.8)&&data.PuppiMET_pt>150) proceed=true;
   if ( proceed) {
   if (syst_index == 0) {
     // syst_index should only be non-0 if settings.varySystematics is true
