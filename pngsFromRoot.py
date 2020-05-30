@@ -18,7 +18,7 @@ parser = OptionParser(usage="Usage: python %prog date_tag")
 #name = "2020_03_11"
 #name = "2020_03_21"
 #name = "2020_04_10"
-name = "2020_05_21-2"
+name = "2020_05_29"
 
 save = 1
 
@@ -73,7 +73,7 @@ replace_in_plotname = {
 plot_these = [
     # Stack plots
     [
-        [".*Eta.*",".*PtBins.*"],
+        [".*EleEta.*", ".*MuEta.*", ".*TauEta.*", ".*PtBins.*",".*Gen*"],
         [".*Gen*"],
     ]
 ]
@@ -90,7 +90,7 @@ for plot_comb in plot_these:
         plot_patterns.append(re.compile(pattern))
     
     for  name in args:
-        input_file = "Plotter_out_2020_05_21.root" 
+        input_file = "Plotter_out_"+name+".root" 
         output_dir = "./"
 
         if save and not os.path.exists(output_dir): os.mkdir(output_dir)
@@ -117,6 +117,10 @@ for plot_comb in plot_these:
                 for i in range(0, curr_dir.GetListOfKeys().GetEntries()):
                     # Match the plot of interest
                     keyname = curr_dir.GetListOfKeys().At(i).GetName()
+                    #curr_dir.GetListOfKeys().At(i).ReadObj().GetPrimitive(keyname)
+                    #NEntries = curr_dir.GetListOfKeys().At(i).ReadObj().GetListOfPrimitives().GetEntries()
+                    #NEntries = curr_dir.GetListOfKeys().At(i).ReadObj().GetEntries()
+                    
                     #if re.match("StackPlot", keyname):
                     #match_plot = True 
                     #for pattern in plot_patterns:
@@ -128,7 +132,7 @@ for plot_comb in plot_these:
                         #print(keyname)
                         #continue
                     if re.match("HadronicMeasurements", keyname):
-                        print("Skipped:",keyname)
+                        print("Skipped: "+keyname)
                         continue
                     else:
                         #print(keyname)
@@ -136,6 +140,17 @@ for plot_comb in plot_these:
                         obj = f.Get(dirname+"/"+keyname)
                         if obj.InheritsFrom("TCanvas"):
                             can = obj
+                            lista = can.GetListOfPrimitives()
+                            for entry in lista:
+                                if entry.ClassName()=="TH1D":
+                                    name =  entry.GetName()
+                                    histo = can.GetPrimitive(name)
+                                    NEntries = histo.GetEntries()
+                                    #print(dirname+"/"+keyname+' has '+str(NEntries)+' entries')
+                                    print(dirname+"/"+keyname)
+                                    print("Hadronic channel: "+str(round(histo.GetBinContent(1)*100,1))+"%")
+                                    print("Semileptonic channel: "+str(round(histo.GetBinContent(2)*100,1))+"%")
+                                    print("Dileptonic  channel: "+str(round(histo.GetBinContent(3)*100,1))+"%")
                             clean_keyname = keyname
                             subdirname = ""
                             for part_to_replace in replace_in_plotname.keys():
@@ -160,9 +175,8 @@ for plot_comb in plot_these:
                             if save:
                                 name = output_dir + newname + ".png"
                                 if not os.path.exists(os.path.dirname(name)): os.makedirs(os.path.dirname(name))
-                                can.Draw()
-                                #print(name)
-                                can.SaveAs(name)
+                                #can.Draw()
+                                #can.SaveAs(name)
                                 #can.SaveAs(name.replace(".png",".pdf"))
                                 #can.SaveAs(name.replace(".png",".C"))
                                 can.Close()
